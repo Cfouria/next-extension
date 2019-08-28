@@ -1,0 +1,32 @@
+{
+  "author": "cat.alucardo@gmail.com",
+  "manifest_version": 2,
+  "name": "Increment a number in an URL",
+  "version": "2",
+  "description": "A sample URL 'http://some.web.site/thing/123/'. Increment the number by 1 with key-combo. Or, find the word 'Next' and 'click' it.",
+  "permissions": ["menus","file:///*","storage","activeTab"],
+  "icons": {
+	"16": "C^f.png"
+  },
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "browser_action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "hotkey.js"
+      ]
+    }
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "cat.alucardo@gmail.com"
+    }
+  }
+}
